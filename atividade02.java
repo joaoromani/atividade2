@@ -1,29 +1,25 @@
 import java.util.Scanner;
 
-// import static org.junit.jupiter.api.Assertions.assertEquals;
-// import org.junit.jupiter.api.Test;
-
 public class atividade02 {
-  public static void main(String[] args) {
-    Scanner teclado = new Scanner(System.in);
-    int a, b, c;
-    
-    System.out.println("Digite o primeiro número: ");
-    a = teclado.nextInt();    
-    System.out.println("Digite o segundo número: ");
-    b = teclado.nextInt();
-    System.out.println("Digite o segundo número: ");
-    c = teclado.nextInt();
-    teclado.close();
-    if (a > b && a > c) {
-      System.out.println("O maior número inserido é o " + a);
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        String username, password;
+        // Solicita o nome de usuário
+        System.out.println("Digite o nome de usuário:");
+        username = teclado.nextLine();
+        
+        // Solicita a senha
+        System.out.println("Digite a senha:");
+        password = teclado.nextLine();
+        
+        // Verifica se a senha é igual ao nome de usuário
+        if (password.equals(username)) {
+            System.out.println("A senha não pode ser igual ao nome de usuário. Tente novamente!");
+            password = teclado.nextLine(); // Solicita uma nova senha
+        }
+        
+        System.out.println("Nome de usuário e senha cadastrados com sucesso.");
+        
+        teclado.close();
     }
-    else if (b > a && b > c) {
-      System.out.println("O maior número inserido é o" + b);
-    }
-    else if (c > a && c > b) {
-      System.out.println("O maior número inserido é o " + c);
-    }
-  }
-
 }
